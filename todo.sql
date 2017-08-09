@@ -1,11 +1,12 @@
--- CREATE TABLE todos(
---   id SERIAL PRIMARY KEY,
---   title VARCHAR(255) NOT NULL,
---   details TEXT,
---   priority INTEGER NOT NULL DEFAULT 1,
---   created_at DATE NOT NULL,
---   completed_at DATE
--- );
+DROP TABLE IF EXISTS todos;
+CREATE TABLE todos(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  details TEXT,
+  priority INTEGER NOT NULL DEFAULT 1,
+  created_at DATE NOT NULL,
+  completed_at DATE
+);
 
 INSERT INTO todos(
   title,
@@ -50,14 +51,15 @@ VALUES
   '09/18/2017',
   NULL
 );
+SELECT * FROM todos;
 
-SELECT title, completed_at
-FROM todos
-WHERE completed_at IS NULL;
-
-SELECT title, priority
-FROM todos
-WHERE priority > 1;
+-- SELECT title, completed_at
+-- FROM todos
+-- WHERE completed_at IS NULL;
+--
+-- SELECT title, priority
+-- FROM todos
+-- WHERE priority > 1;
 
 UPDATE todos
 SET completed_at = '10/15/2016'
