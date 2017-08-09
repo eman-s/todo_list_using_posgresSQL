@@ -80,4 +80,4 @@ SELECT * FROM todos;
 SELECT * FROM todos WHERE priority = 3 AND completed_at IS NULL;
 SELECT * FROM todos WHERE completed_at IS NULL ORDER BY priority DESC;
 SELECT COUNT(id) FROM todos WHERE created_at > CURRENT_DATE -30 GROUP BY priority;
-SELECT MIN(created_at) FROM todos WHERE priority =11;
+SELECT title, created_at, priority FROM todos WHERE completed_at IS NULL ORDER BY priority, created_at DESC LIMIT 1;
